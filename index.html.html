@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psychiatric Injury: Legal Framework Infographic</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* Palette: Vibrant Professional (Deep Blues and Gold Accents) */
+        :root {
+            --primary: #1e3a8a;
+            --secondary: #0ea5e9;
+            --accent: #f59e0b;
+            --bg-light: #f8fafc;
+            --card-bg: #ffffff;
+            --text-dark: #1e293b;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+
+        .gradient-header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #0ea5e9 100%);
+        }
+
+        .logic-card {
+            transition: transform 0.2s;
+        }
+
+        .logic-card:hover {
+            transform: translateY(-4px);
+        }
+
+        /* Flowchart styling using HTML/CSS (No SVG) */
+        .flow-node {
+            border: 2px solid var(--primary);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            position: relative;
+            background: white;
+            z-index: 10;
+        }
+
+        .flow-connector {
+            width: 2px;
+            background: var(--primary);
+            height: 24px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .chart-container {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body class="p-0 m-0">
+
+<!-- 
+    NOTE ON NO-SVG/NO-MERMAID: 
+    This application strictly avoids SVG elements and Mermaid JS. 
+    All diagrams are constructed using Tailwind CSS, HTML flexbox/grid, and Canvas (Chart.js).
+    Chosen Palette: "Brilliant Blues & Vibrant Accents" (Deep Blue #1E3A8A, Sky Blue #0EA5E9, Gold Accent #F59E0B).
+-->
+
+<!-- 
+    PLAN NARRATIVE & STRUCTURE:
+    1. Introduction: Contextualizing Psychiatric Harm in Torts.
+    2. Section 1: The Gateway Hurdles (Medical Recognition & Sudden Shock).
+    3. Section 2: Classification (Primary vs. Secondary).
+    4. Section 3: The Alcock Criteria (The 3-Pronged Test for Secondary Victims).
+    5. Section 4: The Immediate Aftermath (Visualizing Proximity).
+    6. Conclusion: Summary for Exam Readiness.
+-->
+
+<!-- 
+    VISUALIZATION JUSTIFICATION:
+    - Requirement 1 (Donut Chart): Used to show the composition of Actionable vs. Non-Actionable conditions (Goal: Inform).
+    - Victim Comparison (Stacked Bar): Used to compare "Foreseeability" standards (Goal: Compare).
+    - Alcock Strength (Radar Chart): Used to visualize the multidimensional requirements of secondary victims (Goal: Relationship).
+    - Proximity Timeline (Styled HTML): Visualizes the McLoughlin timeline (Goal: Change/Time).
+-->
+
+<header class="gradient-header text-white py-12 px-6 text-center shadow-lg">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4">Tort Law: Psychiatric Injury</h1>
+    <p class="text-xl opacity-90 max-w-2xl mx-auto">A visual strategy guide for mastering psychiatric illness claims in negligence.</p>
+</header>
+
+<main class="max-w-6xl mx-auto p-6 md:p-12 space-y-16">
+
+    <!-- Section 1: The Gateway -->
+    <section>
+        <div class="mb-8">
+            <h2 class="text-3xl font-bold text-blue-900 border-b-4 border-blue-500 inline-block mb-4">Phase 1: The General Hurdles</h2>
+            <p class="text-lg leading-relaxed text-gray-700">
+                Before analyzing who the victim is, the court applies two strict filters. First, as per <strong>Hinz v Berry</strong>, the harm must be a medically recognized illness. Second, as per <strong>Alcock</strong> and <strong>Walters</strong>, it must result from a sudden "shock to the system," rather than a gradual accumulation of grief or stress.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-blue-500">
+                <h3 class="text-xl font-bold mb-4 text-center">Recognition of Illness (Hinz v Berry)</h3>
+                <div class="chart-container">
+                    <canvas id="medicalChart"></canvas>
+                </div>
+                <p class="mt-4 text-sm text-gray-600 italic">
+                    The visualization above contrasts actionable clinical conditions against non-actionable emotional states. In exams, always verify if the "trauma" meets the clinical threshold.
+                </p>
+            </div>
+            <div class="flex flex-col space-y-4">
+                <div class="logic-card p-6 bg-blue-50 rounded-lg border-l-8 border-blue-800">
+                    <h4 class="font-bold text-blue-900">1. Medical Recognition</h4>
+                    <p class="text-sm">Actionable: PTSD, Pathological Grief, Personality Disorders.</p>
+                </div>
+                <div class="logic-card p-6 bg-blue-50 rounded-lg border-l-8 border-blue-800">
+                    <h4 class="font-bold text-blue-900">2. Sudden Shock</h4>
+                    <p class="text-sm">Must be a "sudden appreciation by sight or sound." Walters extended this to a 36-hour continuous event.</p>
+                </div>
+                <div class="p-4 bg-amber-50 rounded-lg border border-amber-200">
+                    <p class="text-sm font-semibold text-amber-800">Exam Tip: If the scenario doesn't explicitly name a condition, state: "It is assumed that medical evidence will substantiate a clinical diagnosis."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Victim Classification -->
+    <section class="bg-slate-100 -mx-6 md:-mx-12 px-6 md:px-12 py-16">
+        <div class="mb-8">
+            <h2 class="text-3xl font-bold text-blue-900 border-b-4 border-blue-500 inline-block mb-4">Phase 2: Victim Classification</h2>
+            <p class="text-lg leading-relaxed text-gray-700">
+                Determining the "duty of care" depends on whether the claimant is a Primary or Secondary victim. According to <strong>Page v Smith</strong>, if a claimant is in the physical danger zone, their threshold for claiming is much lower than those witnessing from afar.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h4 class="font-bold text-primary mb-2">Primary Victims (Zone of Danger)</h4>
+                    <ul class="list-disc list-inside text-sm space-y-2 text-gray-700">
+                        <li>Direct participants in the accident.</li>
+                        <li>Rescuers (only if in physical danger - <strong>White</strong>).</li>
+                        <li>Unwitting Agents (believe they caused death - <strong>Dooley</strong>).</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h4 class="font-bold text-primary mb-2">Secondary Victims (Witnesses)</h4>
+                    <ul class="list-disc list-inside text-sm space-y-2 text-gray-700">
+                        <li>Not in physical danger zone.</li>
+                        <li>Witnesses the event or immediate aftermath.</li>
+                        <li>Must satisfy all <strong>Alcock Control Mechanisms</strong>.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-blue-500">
+                <h3 class="text-xl font-bold mb-4 text-center">Foreseeability Standards</h3>
+                <div class="chart-container">
+                    <canvas id="foreseeableChart"></canvas>
+                </div>
+                <p class="mt-4 text-sm text-gray-600 italic">
+                    This chart compares the "Legal Bar." Primary victims only need physical harm to be foreseeable to claim for mental harm. Secondary victims must prove psychiatric harm was specifically foreseeable.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: The Alcock Test -->
+    <section>
+        <div class="mb-8">
+            <h2 class="text-3xl font-bold text-blue-900 border-b-4 border-blue-500 inline-block mb-4">Phase 3: The Alcock Control Mechanisms</h2>
+            <p class="text-lg leading-relaxed text-gray-700">
+                For secondary victims like Tina, the court applies three strict "Control Mechanisms" to prevent indeterminate liability. Failing even one of these results in a failed claim.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+            <div class="p-6 bg-white rounded-xl shadow-lg border-b-8 border-secondary">
+                <div class="text-4xl mb-4">❤️</div>
+                <h4 class="font-bold text-xl mb-2">Close Link</h4>
+                <p class="text-sm text-gray-600">Close tie of love and affection. Presumed for spouses/parents; others must prove it (Siblings, etc.).</p>
+            </div>
+            <div class="p-6 bg-white rounded-xl shadow-lg border-b-8 border-secondary">
+                <div class="text-4xl mb-4">📍</div>
+                <h4 class="font-bold text-xl mb-2">Proximity</h4>
+                <p class="text-sm text-gray-600">Spatial and temporal closeness to the event or its "immediate aftermath."</p>
+            </div>
+            <div class="p-6 bg-white rounded-xl shadow-lg border-b-8 border-secondary">
+                <div class="text-4xl mb-4">👁️</div>
+                <h4 class="font-bold text-xl mb-2">Perception</h4>
+                <p class="text-sm text-gray-600">Direct perception through unaided senses (seeing/hearing). Excludes TV/Third-party news.</p>
+            </div>
+        </div>
+
+        <div class="mt-12 bg-white p-8 rounded-xl shadow-md">
+            <h3 class="text-xl font-bold mb-6 text-center">The Cumulative Nature of Alcock</h3>
+            <div class="chart-container">
+                <canvas id="alcockRadar"></canvas>
+            </div>
+            <p class="mt-6 text-center text-gray-700 max-w-2xl mx-auto">
+                The Radar chart illustrates that a claim only succeeds when the "area" covers all three axes fully. If proximity is zero (e.g., finding out via phone), the entire claim collapses.
+            </p>
+        </div>
+    </section>
+
+    <!-- Section 4: Immediate Aftermath Timeline -->
+    <section class="pb-12">
+        <div class="mb-8">
+            <h2 class="text-3xl font-bold text-blue-900 border-b-4 border-blue-500 inline-block mb-4">Phase 4: Understanding "Immediate Aftermath"</h2>
+            <p class="text-lg leading-relaxed text-gray-700">
+                One of the most critical areas in your mid-term scenario (Tina) is the "Immediate Aftermath." <strong>McLoughlin v O'Brian</strong> established that the aftermath persists until the immediate traumatic state of the victim has changed (e.g., they are cleaned up or moved to a stable ward).
+            </p>
+        </div>
+
+        <!-- HTML/CSS Timeline (No SVG) -->
+        <div class="relative py-10 px-4 bg-white rounded-xl shadow-inner border border-gray-100">
+            <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-1 bg-blue-200"></div>
+            
+            <div class="space-y-12 relative">
+                <!-- Point 1 -->
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 md:pr-12 text-center md:text-right">
+                        <h5 class="font-bold text-blue-800 text-lg">0 Minutes: The Event</h5>
+                        <p class="text-sm text-gray-600">Negligent act occurs. Secondary victim is not present.</p>
+                    </div>
+                    <div class="w-8 h-8 bg-blue-600 rounded-full border-4 border-white shadow flex items-center justify-center text-white text-xs z-10 my-4 md:my-0">1</div>
+                    <div class="md:w-1/2 md:pl-12"></div>
+                </div>
+
+                <!-- Point 2 -->
+                <div class="flex flex-col md:flex-row-reverse items-center">
+                    <div class="md:w-1/2 md:pl-12 text-center md:text-left">
+                        <h5 class="font-bold text-blue-800 text-lg">60-120 Minutes: The Aftermath</h5>
+                        <p class="text-sm text-gray-600">Arriving at hospital. Victims still uncleaned (<strong>McLoughlin</strong>). <strong>Actionable.</strong></p>
+                    </div>
+                    <div class="w-8 h-8 bg-blue-600 rounded-full border-4 border-white shadow flex items-center justify-center text-white text-xs z-10 my-4 md:my-0">2</div>
+                    <div class="md:w-1/2 md:pr-12"></div>
+                </div>
+
+                <!-- Point 3 -->
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 md:pr-12 text-center md:text-right">
+                        <h5 class="font-bold text-amber-600 text-lg">Post-Stabilization</h5>
+                        <p class="text-sm text-gray-600">Visiting a cleaned, bandaged relative hours later. <strong>Often Not Actionable.</strong></p>
+                    </div>
+                    <div class="w-8 h-8 bg-amber-500 rounded-full border-4 border-white shadow flex items-center justify-center text-white text-xs z-10 my-4 md:my-0">3</div>
+                    <div class="md:w-1/2 md:pl-12"></div>
+                </div>
+            </div>
+        </div>
+        <p class="mt-8 text-center text-gray-600">In Tina's case, her arrival at the hospital 1.5 hours post-accident perfectly matches the <strong>McLoughlin</strong> window.</p>
+    </section>
+
+</main>
+
+<footer class="bg-blue-900 text-white py-12 px-6">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+            <h3 class="text-2xl font-bold mb-4">Exam Summary</h3>
+            <p class="text-blue-200 text-sm leading-relaxed">
+                Remember the workflow: Recognize Injury &rarr; Classify Victim &rarr; Apply Page/Alcock &rarr; Check Foreseeability &rarr; Mention Thin-Skull Rule. Use the names verbatim: <em>Hinz v Berry</em>, <em>Page v Smith</em>, and <em>Alcock</em>.
+            </p>
+        </div>
+        <div class="flex flex-col items-center md:items-end justify-center">
+            <div class="text-sm border border-blue-700 p-4 rounded bg-blue-800">
+                <strong>Status:</strong> Ready for Mid-Term Revision
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Utility for label wrapping (16-char logic)
+    function wrapLabel(label) {
+        if (label.length <= 16) return label;
+        const words = label.split(' ');
+        const lines = [];
+        let currentLine = '';
+
+        words.forEach(word => {
+            if ((currentLine + word).length > 16) {
+                lines.push(currentLine.trim());
+                currentLine = word + ' ';
+            } else {
+                currentLine += word + ' ';
+            }
+        });
+        lines.push(currentLine.trim());
+        return lines;
+    }
+
+    // Chart.js Default Tooltip Config Requirement
+    const tooltipConfig = {
+        callbacks: {
+            title: function(tooltipItems) {
+                const item = tooltipItems[0];
+                let label = item.chart.data.labels[item.dataIndex];
+                if (Array.isArray(label)) {
+                    return label.join(' ');
+                } else {
+                    return label;
+                }
+            }
+        }
+    };
+
+    // Chart 1: Medical Recognition (Donut)
+    const ctxMedical = document.getElementById('medicalChart').getContext('2d');
+    new Chart(ctxMedical, {
+        type: 'doughnut',
+        data: {
+            labels: [wrapLabel('Actionable PTSD'), wrapLabel('Pathological Grief'), wrapLabel('Personality Disorder'), wrapLabel('Non-Actionable Grief')],
+            datasets: [{
+                data: [30, 25, 20, 25],
+                backgroundColor: ['#1e3a8a', '#0ea5e9', '#38bdf8', '#f59e0b'],
+                borderWidth: 0
+            }]
+        },
+        options: {
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { position: 'bottom' },
+                tooltip: tooltipConfig
+            }
+        }
+    });
+
+    // Chart 2: Foreseeability Standards (Bar)
+    const ctxForeseeable = document.getElementById('foreseeableChart').getContext('2d');
+    new Chart(ctxForeseeable, {
+        type: 'bar',
+        data: {
+            labels: [wrapLabel('Physical Harm Foreseeable'), wrapLabel('Psychiatric Harm Foreseeable')],
+            datasets: [
+                {
+                    label: 'Primary Victim',
+                    data: [100, 100],
+                    backgroundColor: '#1e3a8a'
+                },
+                {
+                    label: 'Secondary Victim',
+                    data: [0, 100],
+                    backgroundColor: '#f59e0b'
+                }
+            ]
+        },
+        options: {
+            maintainAspectRatio: false,
+            scales: {
+                y: { beginAtZero: true, max: 120, title: { display: true, text: 'Required Proof (%)' } }
+            },
+            plugins: {
+                tooltip: tooltipConfig
+            }
+        }
+    });
+
+    // Chart 3: Alcock Radar
+    const ctxAlcock = document.getElementById('alcockRadar').getContext('2d');
+    new Chart(ctxAlcock, {
+        type: 'radar',
+        data: {
+            labels: [wrapLabel('Close Emotional Link'), wrapLabel('Spatial Proximity'), wrapLabel('Direct Perception')],
+            datasets: [{
+                label: 'Successful Claim (Tina Example)',
+                data: [90, 85, 95],
+                fill: true,
+                backgroundColor: 'rgba(14, 165, 233, 0.4)',
+                borderColor: '#0ea5e9',
+                pointBackgroundColor: '#0ea5e9'
+            }]
+        },
+        options: {
+            maintainAspectRatio: false,
+            scales: {
+                r: {
+                    angleLines: { display: false },
+                    suggestedMin: 0,
+                    suggestedMax: 100
+                }
+            },
+            plugins: {
+                tooltip: tooltipConfig
+            }
+        }
+    });
+</script>
+</body>
+</html>
